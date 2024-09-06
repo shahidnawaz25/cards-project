@@ -1,24 +1,43 @@
-import logo from './logo.svg';
 import './App.css';
+import Card from './components/Card';
 
 function App() {
+  const cardArr = [
+    {
+      id: '1',
+      title: 'first card',
+      description: 'description',
+    },
+    {
+      id: '2',
+      title: 'second card',
+      description: 'description',
+    },
+    {
+      id: '3',
+      title: 'third card',
+      description: 'description',
+    },
+    {
+      id: '4',
+      title: 'fourth card',
+      description: 'description',
+    },
+  ];
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h1 className="heading"> Cards Portfolio</h1>
+      <p>These cards are of react js</p>
+      <button
+        style={{ backgroundColor: 'indigo', color: 'white', padding: '10px' }}
+      >
+        Click me
+      </button>
+      <br />
+      {cardArr.map((card) => (
+        <Card key={card.id} title={card.title} description={card.description} />
+      ))}
+    </>
   );
 }
 
